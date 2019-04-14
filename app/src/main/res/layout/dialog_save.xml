@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/textSave"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="45dp"
+        android:textStyle="bold"  />
+
+    <TextView
+        android:id="@+id/displayScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/newRecord"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"
+        android:text="@string/score"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/displayScore"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textCursorDrawable="@color/colorPrimaryDark"
+
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:layout_centerInParent="true" />
+
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_below="@id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20px"
+            android:textColor="@android:color/background_light"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/confirm" />
+
+</LinearLayout>

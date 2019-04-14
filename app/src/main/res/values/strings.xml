@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Shoot It !</string>
+    <string name="start">Start</string>
+    <string name="ranking">Ranking</string>
+    <string name="credit">Credit</string>
+    <string name="version">v. 1.0</string>
+    <string name="gameover">Game Over</string>
+    <string name="playagain">Play Again</string>
+    <string name="score">"Score : "</string>
+    <string name="menu">Menu</string>
+    <string name="highscore">"High Score : "</string>
+    <string name="textSave">Register</string>
+    <string name="confirm">Confirm</string>
+    <string name="view">See Ranking</string>
+    <string name="name">Enter your name</string>
+    <string name="reg_succes">Register successfully</string>
+    <string name="reg_empty">Please fill any empty fields</string>
+</resources>

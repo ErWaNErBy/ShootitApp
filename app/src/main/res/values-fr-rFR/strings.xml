@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="start">Démarrer</string>
+    <string name="ranking">Classement</string>
+    <string name="credit">Crédit</string>
+    <string name="version">v. 1.0</string>
+    <string name="gameover">Fin du jeu</string>
+    <string name="playagain">Rejouer</string>
+    <string name="score">"Score : "</string>
+    <string name="menu">Acceuil</string>
+    <string name="highscore">"Meilleur Score : "</string>
+    <string name="textSave">Enregistrez-vous</string>
+    <string name="confirm">Valider</string>
+    <string name="name">Entrer votre nom</string>
+    <string name="view">Voir Classement</string>
+    <string name="reg_succes">Enregistrer avec succès</string>
+    <string name="reg_empty">Veuillez remplir les champs vides</string>
+</resources>
