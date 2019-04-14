@@ -68,6 +68,7 @@ public class GameOverActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = settings.edit();
             editor.putString("HIGH_SCORE", StrScore);
             editor.commit();
+
             //Sinon on affiche le meilleurs score présent dans les données de préférences
         } else DisplayHighScore.setText(this.getString(R.string.score) + highScore);
 
