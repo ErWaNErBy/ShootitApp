@@ -31,10 +31,10 @@ public class GameOverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_over); //Défini le contenu de l'activité à partir d'une ressource de mise en page
 
         //Trouver les vue par leurs identifants dans les ressources
-        StartGameAgain = (Button) findViewById(R.id.play_again_btn);
-        MainMenu = (Button) findViewById(R.id.main_menu);
-        DisplayScore = (TextView) findViewById(R.id.displayScore);
-        DisplayHighScore = (TextView) findViewById(R.id.DisplayHighScore);
+        StartGameAgain = findViewById(R.id.play_again_btn);
+        MainMenu = findViewById(R.id.main_menu);
+        DisplayScore = findViewById(R.id.displayScore);
+        DisplayHighScore = findViewById(R.id.DisplayHighScore);
 
         //clic sur le bouton pour relancer l'activité du jeu pour rejouer
         StartGameAgain.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +45,7 @@ public class GameOverActivity extends AppCompatActivity {
                 finish();
             }
         });
+
         //clic sur le bouton pour fermer l'activité et venir directement sur l'acceuil
         MainMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,17 +71,17 @@ public class GameOverActivity extends AppCompatActivity {
             editor.commit();
 
             //Sinon on affiche le meilleurs score présent dans les données de préférences
-        } else DisplayHighScore.setText(this.getString(R.string.score) + highScore);
+        } else DisplayHighScore.setText(this.getString(R.string.highscore) + highScore);
 
         //Création d'une boite de dialogue pour enregistrer le nom du joueur
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(GameOverActivity.this);
         View mView = getLayoutInflater().inflate(R.layout.dialog_save, null);
 
         //Trouver les vue de la boite de dialogue par leurs identifants dans les ressources de la boite de dialogue
-        TextView displayScore = (TextView) mView.findViewById(R.id.displayScore);
-        Button btnAdd = (Button) mView.findViewById(R.id.btnAdd);
-        final TextView text = (TextView) mView.findViewById(R.id.text);
-        final EditText nameZone = (EditText) mView.findViewById(R.id.editText);
+        TextView displayScore = mView.findViewById(R.id.displayScore);
+        Button btnAdd = mView.findViewById(R.id.btnAdd);
+        final TextView text = mView.findViewById(R.id.text);
+        final EditText nameZone = mView.findViewById(R.id.editText);
 
         mBuilder.setView(mView);    //liaison de la boite de dialogue et de la vue
         final AlertDialog dialog= mBuilder.create();    //création de la boite de dialogue
