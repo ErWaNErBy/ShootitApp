@@ -1,6 +1,7 @@
 package tuto.fr.shootitapp;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class GameActivity extends AppCompatActivity {
     private long timeLeftInMilliseconds = 60000; //1min
     private ImageButton countDownButton;
     private boolean timerRunning;
+    private MediaPlayer mp;
 
     //Méthode onCreate appellée lors de la création de l'activité par le système
     @Override
@@ -38,9 +40,9 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game); //Défini le contenu de l'activité à partir d'une ressource de mise en page
 
         //Trouver les vue par leurs identifants dans les ressources
-        scoreView = (TextView) findViewById(R.id.scoreView);
-        countDownText =(TextView) findViewById(R.id.time);
-        countDownButton =(ImageButton) findViewById(R.id.pauseBtn);
+        scoreView = findViewById(R.id.scoreView);
+        countDownText = findViewById(R.id.time);
+        countDownButton = findViewById(R.id.pauseBtn);
 
         //clic sur le bouton pour démarrer le démarrer ou stopper le jeu et lancer le décompte du timer
         countDownButton.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +51,8 @@ public class GameActivity extends AppCompatActivity {
                 startStop();
             }
         });
+
+        mp = MediaPlayer.create(this, R.raw.ouille);
     }
 
     //fonction pour la création des fenêtres interactives
@@ -57,7 +61,7 @@ public class GameActivity extends AppCompatActivity {
 
             String imageButtonID = "fen"+(i+1);
             int resID = getResources().getIdentifier(imageButtonID,"id",getPackageName());
-            imageButtons[i] = ((ImageButton) findViewById(resID));
+            imageButtons[i] = findViewById(resID);
             final int[] img = new int[]{R.drawable.fenetre_vide,R.drawable.fenetre_voleur,R.drawable.fenetre_resident};
             final Random rand = new Random();
 
@@ -87,6 +91,7 @@ public class GameActivity extends AppCompatActivity {
         //Cet état représente le bouton quand il y a un voleur
         // --- Si l'état bouton correspond bien à un bouton d'un voleur
         if(buttonState[buttonID.indexOf(""+id)]==1){
+            mp.start();
             scoreView.setText(this.getString(R.string.score) + ++score);    //incrémente le score de 1
             imageButtons[i].setImageDrawable(getResources().getDrawable(R.drawable.fenetre_vide));  //change le bouton fenêtre voleur en bouton fenêtre vide
             buttonState[buttonID.indexOf(""+id)]=0; //change son état à 0 ( correspond à une fenêtre vide )
@@ -94,6 +99,7 @@ public class GameActivity extends AppCompatActivity {
         //Cet état représente le bouton quand il y a un habitant
         // --- Si l'état bouton correspond bien à un bouton d'un habitant
         } else if(buttonState[buttonID.indexOf(""+id)]==2) {
+            mp.start();
             int scoreMinus5 = score  -= 5;
             scoreView.setText(this.getString(R.string.score) + scoreMinus5);    //décrément lescore de 5
             imageButtons[i].setImageDrawable(getResources().getDrawable(R.drawable.fenetre_vide));  //change le bouton fenêtre habitant en bouton fenêtre vide

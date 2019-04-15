@@ -35,7 +35,7 @@ public class RankingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ranking); //Défini le contenu de l'activité à partir d'une ressource de mise en page
 
         //Trouver la vue par son identifant dans les ressources
-        resultsListView = (ListView) findViewById(R.id.listView);
+        resultsListView = findViewById(R.id.listView);
 
         //Récupération du nom et du score des joueurs dans les données de préférences
         SharedPreferences setting = getApplicationContext().getSharedPreferences("PREFS", Context.MODE_PRIVATE);
